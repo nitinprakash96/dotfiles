@@ -1,0 +1,45 @@
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[color "status"]
+    added = green bold
+    changed = yellow
+    untracked = blue bold
+
+
+[push]
+    default = matching
+
+[alias]
+    # FIXME Roulette!
+    fixme-roulette = "!f() { \
+        echo 'Abandon hope, all ye who enter here!'; \
+        git grep -Ein '(FIXME|TODO)' | shuf -n1; \
+    }; f"
+    
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    rb = rebase
+    lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[user]
+    name = Nitin Prakash
+    email = prakash.nitin63@gmail.com
+[init]
+	defaultBranch = main
